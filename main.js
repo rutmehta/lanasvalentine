@@ -104,9 +104,9 @@ document.addEventListener('DOMContentLoaded', () => {
         dinnerDetails.innerHTML = `
             <div class="fancy-invitation">
                 <h2 style="font-size: 2.5em; color: #ff1493; margin-bottom: 0.5em;">Our Valentine's Date ❤️</h2>
-                <p style="font-size: 1.8em; color: #ff69b4;">Time: 5:30 PM at Ming's</p>
+                <p style="font-size: 1.8em; color: #ff69b4;"></p>
                 <div style="margin: 2em 0; padding: 1em; background: rgba(255, 105, 180, 0.1); border-radius: 15px;">
-                    <p style="font-size: 1.5em; color: #ff1493;">Time until our special moment:</p>
+                    <p style="font-size: 1.5em; color: #ff1493;">Until next Valentine's:</p>
                     <div id="countdown" style="font-size: 2em; color: #ff1493; margin: 0.5em 0;"></div>
                 </div>
                 <p style="font-size: 1.5em; color: #ff69b4; font-style: italic;">I can't wait to see you! 💝</p>
@@ -131,7 +131,8 @@ document.addEventListener('DOMContentLoaded', () => {
     function calculateTimeUntilDinner() {
         const now = new Date();
         const dinnerTime = new Date();
-        dinnerTime.setHours(17, 30, 0); // 5:30 PM
+        dinnerTime.setHours(0, 0, 0); // 12:00am
+        dinnerTime.setDate(2, 14, 2026);
         
         const diff = dinnerTime - now;
         
